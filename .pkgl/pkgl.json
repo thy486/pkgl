@@ -1,0 +1,10 @@
+{
+    "name": "pkgl-server",
+    "script": "/usr/bin/java",
+    "args": [
+        "-jar",
+        "pkgl.jar"
+    ],
+    "exec_interpreter": "",
+    "exec_mode": "fork"
+}
