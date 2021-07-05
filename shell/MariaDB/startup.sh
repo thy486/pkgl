@@ -28,7 +28,6 @@ else
   cat << EOF > $tfile
 USE mysql;
 FLUSH PRIVILEGES;
-source $PKGL_DIR/shell/MariaDB/script.sql;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '';
@@ -42,6 +41,7 @@ EOF
       echo "[i] Creating user: $MYSQL_USER with password $MYSQL_PASSWORD"
       echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* to '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" >> $tfile
     fi
+    echo "SOURCE $PKGL_DIR/shell/MariaDB/script.sql"
   fi
 
   /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
