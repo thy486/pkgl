@@ -24,8 +24,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && npm install -g pm2 pnpm \
     && git clone -b master https://github.com/thy486/pkgl.git $PKGL_DIR \
     && cd vue-pkgl \
-    && pnpm install \
-    && pnpm run build \
+    && npm install \
     && rm -rf /root/.npm \
     && cd $PKGL_DIR/shell/MariaDB \
     && bash startup.sh \
