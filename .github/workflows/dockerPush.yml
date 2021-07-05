@@ -1,4 +1,4 @@
-name: 构建fy镜像
+name: 构建pkgl镜像
 
 on:
 #  schedule:
