@@ -28,6 +28,7 @@ else
   cat << EOF > $tfile
 USE mysql;
 FLUSH PRIVILEGES;
+SOURCE $PKGL_DIR/shell/MariaDB/script.sql
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '';
@@ -46,9 +47,3 @@ EOF
   /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
   rm -f $tfile
 fi
-
-nohup /usr/bin/mysqld --user=root > /dev/null &
-echo '尝试对数据库进行初始化'
-mysql -u "root" -p1 -e "source $PKGL_DIR/shell/MariaDB/script.sql"
-echo 'export ISOLD=true' >> ~/.bashrc
-source ~/.bashrc
