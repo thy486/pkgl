@@ -29,8 +29,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && cd $PKGL_DIR/shell/MariaDB \
     && cp -f my.cnf  /etc/my.cnf \
     && bash startup.sh \
-    && echo '尝试对数据库进行初始化' \
-    && mysql -u "root" -p "1" -e "source ./script.sql"mysql -u "root" -p "1" -e "source ./script.sql" \
     && cp -f $PKGL_DIR/docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh \
     && chmod 777 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]

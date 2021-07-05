@@ -49,5 +49,5 @@ fi
 
 
 nohup /usr/bin/mysqld --user=root > /dev/null &
-echo -e "\n"
-echo -e "\n"
+echo '尝试对数据库进行初始化'
+mysql -u "root" -p1 -e "source ./script.sql"
