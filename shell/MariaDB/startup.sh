@@ -41,7 +41,7 @@ EOF
       echo "[i] Creating user: $MYSQL_USER with password $MYSQL_PASSWORD"
       echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* to '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" >> $tfile
     fi
-    echo "SOURCE $PKGL_DIR/shell/MariaDB/script.sql"
+    echo "SOURCE $PKGL_DIR/shell/MariaDB/script.sql;" >> $tfile
   fi
 
   /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile

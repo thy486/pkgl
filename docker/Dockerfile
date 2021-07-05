@@ -1,4 +1,4 @@
-FROM maven:3.8-ibmjava-alpine
+FROM alpine:latest
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     LANG=zh_CN.UTF-8 \
     LANGUAGE=zh_CN:zh \
@@ -12,6 +12,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && apk --no-cache add -f tzdata \
                              git \
                              nodejs \
+                             openjdk11 \
                              npm \
                              nginx \
                              curl \
