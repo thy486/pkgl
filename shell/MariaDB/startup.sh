@@ -48,4 +48,6 @@ EOF
 fi
 
 
-exec /usr/bin/mysqld --user=root --console
+nohup /usr/bin/mysqld --user=root > /dev/null &
+echo -e "\n"
+echo -e "\n"
