@@ -48,5 +48,4 @@ EOF
 fi
 
 
-nohup /usr/bin/mysqld --user=root >/dev/null &
-exec mysql -u "root" -p "1" -e "source ./script.sql"
+exec /usr/bin/mysqld --user=root --console
