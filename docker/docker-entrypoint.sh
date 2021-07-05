@@ -1,12 +1,7 @@
 #!/bin/bash
 set -e
 
-
-if [[ $ISOLD ]]; then
-  bash $PKGL_DIR/shell/MariaDB/startup.sh
-else
-  nohup /usr/bin/mysqld --user=root > /dev/null &
-fi
+nohup /usr/bin/mysqld --user=root > /dev/null &
 
 if [ "${1#-}" != "${1}" ] || [ -z "$(command -v "${1}")" ]; then
   set -- node "$@"
