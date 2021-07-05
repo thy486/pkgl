@@ -47,7 +47,8 @@ EOF
   rm -f $tfile
 fi
 
-
 nohup /usr/bin/mysqld --user=root > /dev/null &
 echo '尝试对数据库进行初始化'
-mysql -u "root" -p1 -e "source ./script.sql"
+mysql -u "root" -p1 -e "source $PKGL_DIR/shell/MariaDB/script.sql"
+echo 'export ISOLD=true' >> ~/.bashrc
+source ~/.bashrc
