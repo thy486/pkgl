@@ -31,9 +31,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && cd $PKGL_DIR/shell/MariaDB \
     && cp -f my.cnf  /etc/my.cnf \
     && bash startup.sh \
-    && pm2 start $PKGL_DIR/.pkgl/mysql.json \
-    && bash $PKGL_DIR/shell/init.sh \
-    && pm2 delete all \
     && cp -f $PKGL_DIR/docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh \
-    && chmod 777 /usr/local/bin/docker-entrypoint.sh
+    && ln -sf $PKGL_DIR/shell/init.sh /usr/local/bin/init_mysql \
+    && chmod 777 /usr/local/bin/docker-entrypoint.sh $PKGL_DIR/shell/init.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
