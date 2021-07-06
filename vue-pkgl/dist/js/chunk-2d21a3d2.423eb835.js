@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21a3d2"],{bb51:function(e,n,t){"use strict";t.r(n);var s=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("h1",[e._v("欢迎来到教务管理系统-----"+e._s(this.$cookies.get("name")))])},a=[],c={name:"Home"},o=c,u=t("5031"),l=Object(u["a"])(o,s,a,!1,null,null,null);n["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d21a3d2.423eb835.js.map
