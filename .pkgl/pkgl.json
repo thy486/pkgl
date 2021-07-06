@@ -1,8 +1,8 @@
 {
   "name": "pkgl-server",
   "script": "/usr/bin/java",
-  "error_file": "./log/err.log",
-  "out_file": "./log/out.log",
+  "error_file": "./log/server/err.log",
+  "out_file": "./log/server/out.log",
   "merge_logs": true,
   "log_date_format": "YYYY/MM/DD HH:mm:ss",
   "min_uptime": "60s",
