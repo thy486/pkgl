@@ -3,7 +3,7 @@ use PKGL;
 
 create table class(
                       classID int primary key auto_increment,
-                      className char(20) not null
+                      className char(20) not null unique
 );
 insert into class(className) values ('1班');
 insert into class(className) values ('2班');
