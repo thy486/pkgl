@@ -8,3 +8,8 @@
     --restart always \
     redmancy/pkgl:latest
  ```
+
+ 初始化数据库
+ ```
+ docker exec -it pkgl init_mysql
+ ```
